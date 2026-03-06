@@ -1,26 +1,26 @@
-@import "tailwindcss";
+*
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ── Dark Mode – CSS variable overrides ──────────────────────────────────────
+   html.dark has specificity (0,1,1) which overrides page-level :root (0,1,0).
+   All pages use these same variable names so the theme switches globally.    */
+html.dark {
+  --bg:         #0e1118;
+  --bg2:        #161b26;
+  --surface:    #1a2030;
+  --ink:        #e8eaf0;
+  --ink2:       #b4bacf;
+  --ink4:       #434961;
+  --navy-lt:    #1a2e5a;
+  --navy-xlt:   #0f1e3a;
+  --crimson-lt: #2a0a18;
+  --green-lt:   #0a2010;
+  --line:       #252d3f;
+  --shade:      rgba(0,0,0,.25);
+  --shade2:     rgba(0,0,0,.45);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Body background/color for pages that set it via var(--bg) and var(--ink) */
+html.dark body {
+  background: #0e1118;
+  color: #e8eaf0;
 }
