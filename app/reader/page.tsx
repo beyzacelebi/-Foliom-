@@ -1,8 +1,6 @@
 'use client'
 
-export const dynamic = 'force-dynamic'
-
-import { useEffect, useRef, useState } from 'react'
+import { Suspense, useEffect, useRef, useState } from 'react'
 import { useSearchParams, useRouter } from 'next/navigation'
 import { supabase } from '@/lib/supabase'
 
@@ -39,7 +37,7 @@ function readMinutes(words: number) {
   return Math.max(1, Math.round(words / 200))
 }
 
-export default function ReaderPage() {
+function ReaderContent() {
   const searchParams = useSearchParams()
   const router = useRouter()
   const chapterId = searchParams?.get('chapter') || ''
@@ -464,5 +462,13 @@ body.dark{--rd-bg:#111318;--rd-ink:#d8d8e8;--rd-ink2:#a0a0c0;--rd-line:rgba(220,
 
       {chCommentToast && <div className="ch-toast">{chCommentToast}</div>}
     </>
+  )
+}
+
+export default function ReaderPage() {
+  return (
+    <Suspense>
+      <ReaderContent />
+    </Suspense>
   )
 }
