@@ -29,7 +29,7 @@ export default function GenrePageClient({ genre }: { genre: string }) {
     supabase
       .from('stories')
       .select('id, title, genre, cover_url, view_count')
-      .ilike('genre', `%${genre}%`)
+      .ilike('genre', '%' + genre + '%')
       .eq('is_published', true)
       .order('view_count', { ascending: false })
       .then(({ data }) => {
