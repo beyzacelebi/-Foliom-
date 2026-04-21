@@ -332,3 +332,31 @@ export default function UserProfileClient({ profileId }: { profileId: string }) 
                 </svg>
                 <div className="empty-panel-title">Henuz yayinlanmis kitap yok</div>
                 <div className="empty-panel-sub">Bu yazar henuz bir kitap yayinlamamis.</div>
+
+                ) : (
+              <div className="follow-grid">
+                {followingList.map(u => (
+                  <div key={u.id} className="follow-card" onClick={() => router.push('/profile/' + u.id)}>
+                    <div className="fc-ava">
+                      {u.avatar_url
+                        ? <img src={u.avatar_url} alt={u.display_name || ''} />
+                        : (u.display_name || u.username || '?')[0].toUpperCase()
+                      }
+                    </div>
+                    <div className="fc-name">{u.display_name || u.username || 'Kullanici'}</div>
+                    {u.username && <div className="fc-sub">{'@' + u.username}</div>}
+                  </div>
+                ))}
+              </div>
+            )}
+          </>
+        )}
+
+      </div>
+
+      {toast && <div className="toast">{toast}</div>}
+
+      <footer>2026 Foliom. Tum haklari saklidir.</footer>
+    </>
+  )
+}
