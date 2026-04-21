@@ -6,7 +6,7 @@ export async function generateStaticParams() {
     .from('reading_lists')
     .select('id')
 
-  return (data || []).map((row) => ({
+  return (data || []).map((row: any) => ({
     id: row.id,
   }))
 }
