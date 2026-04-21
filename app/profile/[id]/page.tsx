@@ -2,13 +2,16 @@ import { supabase } from '@/lib/supabase'
 import UserProfileClient from './UserProfileClient'
 
 export async function generateStaticParams() {
-  const { data } = await supabase
-    .from('profiles')
-    .select('id')
-
-  return (data || []).map((row) => ({
-    id: row.id,
-  }))
+  try {
+    const { data } = await supabase
+      .from('profiles')
+      .select('id')
+    return (data || []).map((row: any) => ({
+      id: row.id,
+    }))
+  } catch {
+    return []
+  }
 }
 
 export default function ProfilePage({ params }: { params: { id: string } }) {
