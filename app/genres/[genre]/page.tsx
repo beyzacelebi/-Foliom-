@@ -7,10 +7,9 @@ export async function generateStaticParams() {
     .select('genre')
     .eq('is_published', true)
 
-  // Tüm genre değerlerini al, tekrarları temizle
   const genres = [...new Set(
     (data || [])
-      .map(s => s.genre)
+      .map((s: any) => s.genre)
       .filter(Boolean)
   )]
 
