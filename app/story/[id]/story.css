@@ -1,4 +1,3 @@
-`
 :root{
   --bg:#f2f3f7;--bg2:#e8eaf0;--surface:#fff;--ink:#181c2c;--ink2:#434961;--ink3:#8890aa;--ink4:#b4bacf;
   --navy:#1e3a6e;--navy2:#2e4f91;--navy3:#4169af;--navy-lt:#d6e2f7;--navy-xlt:#edf2fc;
@@ -11,8 +10,6 @@
 body{font-family:var(--sans);background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased}
 a{text-decoration:none;color:inherit}
 button{font-family:inherit;cursor:pointer;border:none}
-
-/* HERO */
 .book-hero{position:relative;overflow:hidden;background:#0d1c3a}
 .book-hero-bg{position:absolute;inset:0;filter:blur(40px) brightness(.35) saturate(1.4);transform:scale(1.1);background-size:cover;background-position:center}
 .book-hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(13,28,58,.4) 0%,rgba(13,28,58,.85) 100%)}
@@ -42,8 +39,6 @@ button{font-family:inherit;cursor:pointer;border:none}
 .btn-save{display:flex;align-items:center;gap:.45rem;padding:.68rem 1.2rem;border-radius:9px;font-size:.85rem;font-weight:700;background:rgba(255,255,255,.1);color:#fff;border:1.5px solid rgba(255,255,255,.25);cursor:pointer;transition:all .2s;backdrop-filter:blur(6px)}
 .btn-save:hover{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.45)}
 .btn-save.saved{background:var(--crimson2);border-color:var(--crimson2)}
-
-/* BODY */
 .book-body{max-width:1100px;margin:0 auto;padding:0 2.5rem 4rem;display:grid;grid-template-columns:1fr 320px;gap:2rem;align-items:start}
 .book-tabs{display:flex;gap:0;border-bottom:2px solid var(--line);margin:2rem 0 1.5rem}
 .book-tab{padding:.65rem 1.1rem;font-size:.85rem;font-weight:700;color:var(--ink3);background:none;border:none;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;transition:color .2s,border-color .2s}
@@ -51,8 +46,6 @@ button{font-family:inherit;cursor:pointer;border:none}
 .book-tab:hover{color:var(--ink)}
 .tab-panel{display:none}
 .tab-panel.active{display:block}
-
-/* AÇIKLAMA */
 .book-desc{font-family:var(--body-t);font-size:.97rem;line-height:1.85;color:var(--ink2);margin-bottom:1rem}
 .btn-more{background:none;border:none;color:var(--navy2);font-size:.8rem;font-weight:700;cursor:pointer;padding:0}
 .book-tags{display:flex;flex-wrap:wrap;gap:.45rem;margin:1.2rem 0}
@@ -62,8 +55,6 @@ button{font-family:inherit;cursor:pointer;border:none}
 .star-btn{background:none;border:none;cursor:pointer;padding:.1rem;color:var(--ink4);transition:color .15s}
 .star-btn.on{color:#e6a817}
 .star-btn svg{width:24px;height:24px}
-
-/* BÖLÜMLER */
 .chapter-list{display:flex;flex-direction:column;gap:.5rem}
 .chapter-item{display:flex;align-items:center;gap:1rem;padding:.9rem 1rem;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);cursor:pointer;transition:border-color .2s,box-shadow .2s}
 .chapter-item:hover{border-color:var(--navy3);box-shadow:0 2px 8px var(--shade)}
@@ -72,8 +63,6 @@ button{font-family:inherit;cursor:pointer;border:none}
 .chapter-name{font-size:.87rem;font-weight:700;color:var(--ink);margin-bottom:.15rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .chapter-date{font-size:.72rem;color:var(--ink4)}
 .chapter-words{font-size:.72rem;color:var(--ink4);flex-shrink:0}
-
-/* YORUMLAR */
 .comment-form{margin-bottom:1.5rem}
 .comment-textarea{width:100%;padding:.75rem 1rem;border:1.5px solid var(--line);border-radius:var(--r-sm);font-family:var(--sans);font-size:.88rem;color:var(--ink);resize:vertical;min-height:88px;outline:none;transition:border-color .2s,box-shadow .2s;background:var(--surface)}
 .comment-textarea:focus{border-color:var(--navy3);box-shadow:0 0 0 3px rgba(65,105,175,.1)}
@@ -82,8 +71,6 @@ button{font-family:inherit;cursor:pointer;border:none}
 .btn-comment:hover{opacity:.88}
 .btn-comment svg{width:14px;height:14px}
 .comments-empty{text-align:center;padding:2.5rem 1rem;color:var(--ink4);font-size:.88rem}
-
-/* SAĞ PANEL */
 .sidebar-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);padding:1.2rem;margin-bottom:1.2rem}
 .sidebar-title{font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:1rem;padding-bottom:.6rem;border-bottom:1px solid var(--line)}
 .author-card{display:flex;gap:.9rem;align-items:center}
@@ -97,12 +84,8 @@ button{font-family:inherit;cursor:pointer;border:none}
 .stat-box{background:var(--bg);border-radius:8px;padding:.75rem;text-align:center}
 .stat-box-val{font-family:var(--serif);font-size:1.4rem;font-weight:700;color:var(--navy);line-height:1}
 .stat-box-lbl{font-size:.68rem;color:var(--ink3);margin-top:.2rem;text-transform:uppercase;letter-spacing:.04em}
-
-/* TOAST */
 .toast-bar{position:fixed;bottom:1.75rem;left:50%;transform:translateX(-50%);background:rgba(24,28,44,.95);color:#fff;padding:.55rem 1.2rem;border-radius:10px;font-size:.8rem;font-weight:600;display:flex;align-items:center;gap:.45rem;box-shadow:0 6px 24px rgba(0,0,0,.28);z-index:999;white-space:nowrap;animation:slideUp .2s ease}
 @keyframes slideUp{from{opacity:0;transform:translate(-50%,8px)}to{opacity:1;transform:translate(-50%,0)}}
-
-/* MODAL */
 .modal-back{position:fixed;inset:0;background:rgba(13,28,58,.5);backdrop-filter:blur(4px);z-index:900;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .2s}
 .modal-back.open{opacity:1;pointer-events:auto}
 .modal{background:var(--surface);width:90%;max-width:400px;border-radius:16px;box-shadow:0 12px 48px rgba(0,0,0,.2);overflow:hidden;transform:translateY(20px);transition:transform .3s cubic-bezier(.34,1.56,.64,1)}
@@ -116,7 +99,6 @@ button{font-family:inherit;cursor:pointer;border:none}
 .list-select-item{display:flex;align-items:center;justify-content:space-between;padding:.85rem 1rem;border:1.5px solid var(--line);border-radius:10px;margin-bottom:.6rem;cursor:pointer;transition:border-color .2s,background .2s}
 .list-select-item:hover{border-color:var(--navy3);background:var(--navy-xlt)}
 .list-select-name{font-size:.88rem;font-weight:700;color:var(--ink)}
-
 @media(max-width:900px){
   .book-body{grid-template-columns:1fr}
   .book-sidebar{order:-1}
@@ -124,4 +106,3 @@ button{font-family:inherit;cursor:pointer;border:none}
   .book-cover{width:130px;height:190px}
   .book-title{font-size:1.9rem}
 }
-      `
